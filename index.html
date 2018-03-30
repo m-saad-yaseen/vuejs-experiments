@@ -1,0 +1,36 @@
+<html>
+<head>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<div class="patient-schedule">
+			<div id="visitDate" class="selected-visit-date" v-on:click="showVisitDateDropDown = !showVisitDateDropDown">
+				{{ formatDate(selectedPatientVisitDate) }}
+			</div>
+			<div v-if="showVisitDateDropDown" id="visitDateDropdown">
+				<template v-for="(date, key) in visitDateArray">
+					<div class="visit-date-item" v-on:click="changeVisitDate" :data-rowindex="key">{{ formatDate(date.day) }}</div>
+				</template>
+			</div>
+			<input type="button" id="addNewPatient" value="Add Patient" v-on:click="addNewPatient" class="btn btn-light add-patient-btn"></input>
+			<div class="patient-list">
+				<template v-for="(patient, key) in currentPatientList">
+					<div class="patient" v-on:click="changeSelectedPatient" :data-rowindex="key">{{ patient.name }}</div>
+				</template>
+			</div>
+		</div>
+		<div class="patient-note-container">
+			<input type="text" v-model="selectedPatient.name" id="patientName" class="form-control">
+			<div class="patient-note">
+				<textarea name="patientNote" id="patientNote" rows="10" cols="80"></textarea>
+				<input type="text" id="patientNoteHidden" ref="patientNoteHidden" class="hide" v-model="selectedPatient.patientNote">
+			</div>
+		</div>
+	</div>
+	<script src="vue.js"></script>
+	<script src="ckeditor/ckeditor.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+body {
+	margin: 10px;
+}
+div {
+	font-family: arial;
+	font-size: 13px
+}
+.hide {
+	display: none;
+}
+.patient-schedule {
+	width: 250px;
+	position: relative;
+	display: inline-block;
+    float: left;
+}
+#visitDateDropdown {
+	position: absolute;
+	width: 250px;
+}
+.selected-visit-date, .visit-date-item {
+	padding: 10px;
+	background-color: #ffffff;
+	border: 1px solid #efefef;
+	text-align: center;
+	cursor: pointer;
+}
+.add-patient-btn {
+	width: 250px;
+	margin-top: 10px;
+}
+.patient-list{
+	margin-top: 10px;
+}
+.patient {
+	padding: 10px;
+	border: 1px solid #efefef;
+	text-align: center;
+	cursor: pointer;
+}
+.patient-note-container {
+	float: left;
+	padding-left: 10px;
+	width: 800px;
+}
+#patientName {
+	width: 220px
+}
+.patient-note {
+	margin-top: 10px
+}
